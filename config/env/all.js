@@ -31,7 +31,8 @@ module.exports = {
 			'public/config.js',
 			'public/application.js',
 			'public/modules/*/*.js',
-			'public/modules/*/*[!tests]*/*.js'
+			'public/modules/*/*[!tests]*/*.js',
+			'public/modules/products/controllers/products.client.datePickerController.js'
 		],
 		tests: [
 			'public/lib/angular-mocks/angular-mocks.js',

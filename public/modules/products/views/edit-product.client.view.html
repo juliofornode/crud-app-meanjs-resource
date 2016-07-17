@@ -1,0 +1,86 @@
+<section data-ng-controller="ProductsController" data-ng-init="findOne()">
+    <div class="page-header">
+        <h1>Edit Product</h1>
+    </div>
+    <div class="col-md-12">
+        <form class="form-horizontal" data-ng-submit="update()" novalidate>
+
+
+            <fieldset>
+
+                <div class="form-group">
+                    <label for="productImageUrl" class="control-label">Image Url</label>
+                    <div class="controls">
+                        <input type="text" class="form-control"
+                               id="productImageUrl" name="productImageUrl"
+                               required
+                               placeholder="Product Image Url" ng-model="product.imageUrl">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="productTitle" class="control-label">Title</label>
+                    <div class="controls">
+                        <input type="text" class="form-control"
+                               id="productTitle" name="productTitle"
+                               required
+                               placeholder="Product Name" ng-model="product.name">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="productAuthor" class="control-label">Author</label>
+                    <div class="controls">
+                        <input type="text" class="form-control"
+                               id="productAuthor" name="productAuthor"
+                               required
+                               placeholder="Product Author" ng-model="product.author">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="productDescription" class="control-label">Description</label>
+                    <div class="controls">
+                        <input type="text" class="form-control"
+                               id="productDescription" name="productDescription"
+                               required
+                               placeholder="Product Description" ng-model="product.description">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="productPrice" class="control-label">Price</label>
+                    <div class="controls">
+                        <input type="text" class="form-control"
+                               id="productPrice" name="productPrice"
+                               placeholder="Product Price" ng-model="product.price">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="datePicker" class="control-label" ng-controller="DatePickerController">Date</label>
+                    <div class="controls">
+                        <p class="input-group">
+                            <input type="text" class="form-control" id="datePicker"
+                                   uib-datepicker-popup="{{format}}"
+                                   is-open="popup1.opened" datepicker-options="dateOptions"
+                                   close-text="Close" alt-input-formats="altInputFormats"
+                                   ng-model="product.date"/>
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default"
+                                ng-click="open1()"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <input type="submit" value="Update" class="btn btn-default">
+                </div>
+				<div data-ng-show="error" class="text-danger">
+					<strong data-ng-bind="error"></strong>
+				</div>
+            </fieldset>
+        </form>
+    </div>
+</section>
